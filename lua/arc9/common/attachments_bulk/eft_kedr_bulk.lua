@@ -64,10 +64,10 @@ ARC9.LoadAttachment(ATT, "eft_kedr_silencer")
 
 ATT = {}
 
-ATT.PrintName = "Unfolded PP-91 \"Kedr\" stock"
-ATT.CompactName = "Unfolded"
+ATT.PrintName = "Folded PP-91 \"Kedr\" stock"
+ATT.CompactName = "Folded"
 ATT.Icon = Material("entities/eft_kedr_attachments/stock.png", "mips smooth")
-ATT.Description = [[Unfolded stock meow]]
+ATT.Description = [[Folded stock meow]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 

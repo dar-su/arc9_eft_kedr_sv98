@@ -104,9 +104,9 @@ SWEP.Recoil = 0.4 -- general multiplier of main recoil
 SWEP.RecoilUp   = 3   -- up recoil
 SWEP.RecoilSide = 1.5 -- sideways recoil
 SWEP.RecoilRandomUp   = 0.75 -- random up/down
-SWEP.RecoilRandomSide = 1.25   -- random left/right
+SWEP.RecoilRandomSide = 0.6   -- random left/right
 
-SWEP.RecoilAutoControl = 5 -- autocompenstaion, could be cool if set to high but it also affects main recoil
+SWEP.RecoilAutoControl = 3 -- autocompenstaion, could be cool if set to high but it also affects main recoil
 
 -- visual recoil   aka visrec
 SWEP.VisualRecoil = 1 -- general multiplier for it
@@ -118,7 +118,7 @@ SWEP.VisualRecoilSide                 = 0.13   --   when fullautoing
 SWEP.VisualRecoilRoll = 4 -- roll tilt, a visual thing
 
 SWEP.VisualRecoilPunch = 1 -- How far back visrec moves the gun
-SWEP.VisualRecoilPunchSights = -7 -- same but in sights only
+SWEP.VisualRecoilPunchSights = -3 -- same but in sights only
 
 SWEP.VisualRecoilDampingConst = 200  -- spring settings, this is speed of visrec
 SWEP.VisualRecoilSpringPunchDamping = 5 -- the less this is the more wobbly gun moves

@@ -25,7 +25,7 @@ SWEP.Trivia = {
 SWEP.Description = [[The SV-98 is a Russian sniper rifle developed in 1998-2000 by a group of weapon engineers led by V. Stronskiy and serially produced by IzhMash group. It is a magazine-fed bolt-action rifle, designed to engage the military personnel at the distances of up to 1000m.]]
 
 SWEP.StandardPresets = {
-    "[SV-98 OV ]XQAAAQD+AQAAAAAAAAA9iIIiM7tuo1AtT00OeFD86k0n/9fXGvWE9Ip3tMyckWMDUs7Go3vdXOiYXMim72+WasHjPm7ZEDo8ZvJmicSwKwcbiMgKnCp66E/sVZ3Kw1w1AzI1h0dPpkrS74jkG1OLF46ngmiYcX20HPkT4NwIqx74FWlg9OIzpE1RLPXhNB/9bJw8Fsa4ekCDwQXShHQEHpOoSKGHjtzY/3YNPKMR8Jld1d0Ww6kJopGbG2TKuEGhtTnDMoG24lMU"
+    "[OV]XQAAAQD+AQAAAAAAAAA9iIIiM7tuo1AtT00OeFD86k0n/9fXGvWE9Ip3tMyckWMDUs7Go3vdXOiYXMim72+WasHjPm7ZEDo8ZvJmicSwKwcbiMgKnCp66E/sVZ3Kw1w1AzI1h0dPpkrS74jkG1OLF46ngmiYcX20HPkT4NwIqx74FWlg9OIzpE1RLPXhNB/9bJw8Fsa4ekCDwQXShHQEHpOoSKGHjtzY/3YNPKMR8Jld1d0Ww6kJopGbG2TKuEGhtTnDMoG24lMU"
 }
     
 SWEP.Slot = 3
@@ -99,18 +99,18 @@ SWEP.SpreadAddMove = 0.015
 
 SWEP.Recoil = 1 -- general multiplier of main recoil
 
-SWEP.RecoilUp   = 12   -- up recoil
+SWEP.RecoilUp   = 7   -- up recoil
 SWEP.RecoilSide = 1.1 -- sideways recoil
 SWEP.RecoilRandomUp   = 0.5 -- random up/down
 SWEP.RecoilRandomSide = 1   -- random left/right
 
-SWEP.RecoilAutoControl = 3.0 -- autocompenstaion, could be cool if set to high but it also affects main recoil
+SWEP.RecoilAutoControl = 2.5 -- autocompenstaion, could be cool if set to high but it also affects main recoil
 
 -- visual recoil   aka visrec
 SWEP.VisualRecoil = 1 -- general multiplier for it
 
-local EFT_VisualRecoilUp_BURST_SEMI   = 2.5   -- up/down tilt when semi/bursts
-SWEP.VisualRecoilUp                   = 2.5   --   when fullautoing
+local EFT_VisualRecoilUp_BURST_SEMI   = 1.5   -- up/down tilt when semi/bursts
+SWEP.VisualRecoilUp                   = 1.5   --   when fullautoing
 local EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
 SWEP.VisualRecoilSide                 = 0.04   --   when fullautoing
 SWEP.VisualRecoilRoll = 15 -- roll tilt, a visual thing
@@ -798,6 +798,15 @@ SWEP.AttachmentElements = {
     ["eft_sv98_black"] = { Skin = 1 },
 }
 
+SWEP.Hook_ModifyBodygroups = function(swep, data)
+    local els = data.elements
+
+    if els["eft_sv98_bipodd"] and swep:GetBipod() then
+        if swep:GetEnterBipodTime() + 0.2 < CurTime() then
+            data.model:SetBodygroup(3, 3)
+        end
+    end
+end
 
 SWEP.Attachments = {
     {
