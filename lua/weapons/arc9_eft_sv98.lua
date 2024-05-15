@@ -10,8 +10,11 @@ SWEP.Credits = {
     [ARC9:GetPhrase("eft_trivia_help") .. "3"] = "Mal0", 
     [ARC9:GetPhrase("eft_trivia_arc9") .. "4"] = "Arctic",
 }
+ARC9:AddPhrase("eft_weapon_sv98", "SV-98", "en")
+ARC9:AddPhrase("eft_weapon_sv98", "СВ-98", "ru")
+ARC9:AddPhrase("eft_weapon_sv98", "SW-98 :3", "uwu")
 
-SWEP.PrintName = "SV-98"
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_sv98")
 
 SWEP.Class = ARC9:GetPhrase("eft_class_weapon_boltsnip")
 SWEP.Trivia = {

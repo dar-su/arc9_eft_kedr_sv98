@@ -12,7 +12,17 @@ SWEP.Credits = {
     [ARC9:GetPhrase("eft_trivia_arc9") .. "4"] = "Arctic",
 }
 
-SWEP.PrintName = "PP-91 \"Kedr\""
+ARC9:AddPhrase("eft_weapon_kedr", "PP-91 \"Kedr\"", "en")
+ARC9:AddPhrase("eft_weapon_kedr", "ПП-91 \"Кедр\"", "ru")
+ARC9:AddPhrase("eft_weapon_kedr", "PP-91 \"Kedw\"", "uwu")
+ARC9:AddPhrase("eft_weapon_kedrb", "PP-91-01 \"Kedr-B\"", "en")
+ARC9:AddPhrase("eft_weapon_kedrb", "ПП-91-01 \"Кедр-Б\"", "ru")
+ARC9:AddPhrase("eft_weapon_kedrb", "PP-91-01 \"Kedw-Bwa\"", "uwu")
+ARC9:AddPhrase("eft_weapon_klin", "PP-9 \"Klin\"", "en")
+ARC9:AddPhrase("eft_weapon_klin", "ПП-9 \"Клин\"", "ru")
+ARC9:AddPhrase("eft_weapon_klin", "PP-9 \"Kwin\"", "uwu")
+
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_kedr")
 SWEP.Class = ARC9:GetPhrase("eft_class_weapon_smg")
 SWEP.Trivia = {
     [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "ZMZ",
@@ -24,8 +34,9 @@ SWEP.Trivia = {
 
 SWEP.Description = [[The PP-91 Kedr is a submachine gun chambered in 9x18 PM, designed by Yevgeny Dragunov in the early 90s by order of the Ministry of Internal Affairs and produced at ZMZ (Zlatoústovskiy Mashinostroítelnyy Zavód - "Zlatoust Machine-Building Plant"). This submachine gun has a simple but effective design. Its light weight makes it more comfortable to carry without affecting its performance, and it provides a high rate of fire without affecting its recoil. Thanks to these characteristics, its still used as a service weapon in almost all Russian law enforcement agencies.]]
 
-
--- SWEP.StandardPresets = {}
+SWEP.StandardPresets = {
+    "[Kedr-B]XQAAAQANAQAAAAAAAAA9iIIiM7tuo1AtT00OeFD2BHq79UsLb0WwNhJj8r3aZ6jZerClRIKLNh6mcxiFHlOIVZ4gvYvAdtLM0DD51m7/t6Me+RKK08elNQaJSY0ZGALaI9igo2IT1hsB/fkFo8H5EgCELJ3oq739viSDtmbi1hfa2VPTVAM26xJRMLMA"
+}
 
 SWEP.BarrelLength = 17
 SWEP.Slot = 2
@@ -360,6 +371,29 @@ SWEP.SuppressEmptySuffix = true
 
 ------------------------- [[[           Hooks & functions            ]]] -------------------------
 
+SWEP.HookP_NameChange = function(self, name)
+    local elements = self:GetElements()
+
+    if elements["eft_kedr_conv_klin"] then
+        return ARC9:GetPhrase("eft_weapon_klin")
+    elseif elements["eft_kedr_conv_b"] then
+        return ARC9:GetPhrase("eft_weapon_kedrb")
+    else
+        return ARC9:GetPhrase("eft_weapon_kedr")
+    end
+end
+
+SWEP.HookP_DescriptionChange = function(self, desc)
+    local elements = self:GetElements()
+
+    if elements["eft_kedr_conv_klin"] then
+        return [[The PP-9 Klin is a further evolution of the Kedr submachine gun. It has a higher rate of fire and its chamber is designed to use the 9x18 PMM cartridge. It was produced from 1996 to 2002 by order of the Ministry of Internal Affairs.]]
+    elseif elements["eft_kedr_conv_b"] then
+        return [[A rare silenced version of the PP-91 Kedr submachine gun, denominated as PP-91-01 Kedr-B.]]
+    else
+        return [[The PP-91 Kedr is a submachine gun chambered in 9x18 PM, designed by Yevgeny Dragunov in the early 90s by order of the Ministry of Internal Affairs and produced at ZMZ (Zlatoústovskiy Mashinostroítelnyy Zavód - "Zlatoust Machine-Building Plant"). This submachine gun has a simple but effective design. Its light weight makes it more comfortable to carry without affecting its performance, and it provides a high rate of fire without affecting its recoil. Thanks to these characteristics, its still used as a service weapon in almost all Russian law enforcement agencies.]]
+    end
+end
 
 
 ------------------------- [[[           Animations            ]]] -------------------------
