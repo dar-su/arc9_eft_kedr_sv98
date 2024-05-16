@@ -519,7 +519,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     SWEP.Animations = {
         ["idle"] = {
             Source = "idle",
-            Time = 1000, -- reset when done soundstables!!!!!!!!
         },
     
         ["ready"] = {
