@@ -753,6 +753,18 @@ SWEP.Animations = {
 
 
 
+    ["enter_bipod"] = {
+        Source = "mod_switch",
+    },
+    ["exit_bipod_empty"] = {
+        Source = "mod_switch_empty",
+    },
+    ["exit_bipod"] = {
+        Source = "mod_switch",
+    },
+    ["exit_bipod_empty"] = {
+        Source = "mod_switch_empty",
+    },
 
 }
 
@@ -805,7 +817,7 @@ SWEP.Hook_ModifyBodygroups = function(swep, data)
     local els = data.elements
 
     if els["eft_sv98_bipodd"] and swep:GetBipod() then
-        if swep:GetEnterBipodTime() + 0.2 < CurTime() then
+        if swep:GetEnterBipodTime() + 0.1 < CurTime() then
             data.model:SetBodygroup(3, 3)
         end
     end
