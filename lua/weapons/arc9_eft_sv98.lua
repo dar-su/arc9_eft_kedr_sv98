@@ -503,6 +503,11 @@ local rik_empty = {
     { t = 1, lhik = 1 },
 }
 
+SWEP.EnterBipodSound = false 
+SWEP.ExitBipodSound = false
+SWEP.BipodPos = Vector(-2, 0, 0)
+SWEP.BipodAng = Angle(0, 0, 0)
+
 SWEP.Animations = {
     ["idle"] = { Source = "idle"  },
 
@@ -754,18 +759,31 @@ SWEP.Animations = {
 
 
     ["enter_bipod"] = {
-        Source = "mod_switch",
+        Source = "action",
+        EventTable = {
+            { s = { "weapons/darsu_eft/bipod/bipod_atlas_unfold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_3.ogg" }, t = 0.0 },
+            { s = { "weapons/darsu_eft/bipod/bipod_stand_on_1.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_2.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_3.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_4.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_5.ogg" }, t = 0.2 },
+        }
     },
-    ["exit_bipod_empty"] = {
-        Source = "mod_switch_empty",
+    ["enter_bipod_empty"] = {
+        Source = "action_empty",
+        EventTable = {
+            { s = { "weapons/darsu_eft/bipod/bipod_atlas_unfold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_3.ogg" }, t = 0.0 },
+            { s = { "weapons/darsu_eft/bipod/bipod_stand_on_1.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_2.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_3.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_4.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_5.ogg" }, t = 0.2 },
+        }
     },
     ["exit_bipod"] = {
-        Source = "mod_switch",
+        Source = "action",
+        EventTable = {
+            { s = { "weapons/darsu_eft/bipod/bipod_atlas_fold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_3.ogg" }, t = 0.0 },
+        }
     },
     ["exit_bipod_empty"] = {
-        Source = "mod_switch_empty",
+        Source = "action_empty",
+        EventTable = {
+            { s = { "weapons/darsu_eft/bipod/bipod_atlas_fold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_3.ogg" }, t = 0.0 },
+        }
     },
-
 }
 
 

@@ -283,20 +283,18 @@ ATT.CompactName = "SV-98 bipod"
 ATT.Icon = Material("entities/eft_sv98_attachments/bipod.png", "mips smooth")
 ATT.Description = [[A standard-issue Izhmash bipod for the SV-98 sniper rifle. Folded into the handguard when not used.
 
-Note: bipods not function in EFT! (yet)
-But here they are using non official arc9 magic. Do not place them if you want original  experience]]
+A bit improvised version of EFT bipods, does not need manual unfolding.]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
-ATT.EFTErgoAdd = 4
-ATT.CustomPros = { Ergonomics = "+4" }
-ATT.VisualRecoilMult = 0.98
-ATT.RecoilMult = 0.98
+ATT.EFTErgoAdd = -2
+ATT.CustomCons = { Ergonomics = "-2" }
 
 ATT.Bipod = true 
-ATT.RecoilMultBipod = 0.75
-ATT.VisualRecoilMultBipod = 0.75
-ATT.SpreadAddBipod = -0.02
+ATT.RecoilMultBipod = 0.33
+ATT.VisualRecoilMultBipod = 0.33
+ATT.HoldBreathTimeMultBipod = 30
+ATT.SwayMultBipod = 0.1
 
 ATT.Category = {"eft_sv98_bipod"}
 
