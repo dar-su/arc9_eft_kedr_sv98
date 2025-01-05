@@ -60,7 +60,7 @@ SWEP.RPM = 450
 
 SWEP.EFTErgo = 24
 SWEP.BarrelLength = 50
-SWEP.Ammo = "357"
+SWEP.Ammo = "ar2"
 SWEP.Firemodes = { { Mode = 1, PrintName = "Bolt-action" },  }
 
 SWEP.ManualAction = true
@@ -86,9 +86,9 @@ SWEP.RecoilAutoControl = 2.5 -- autocompenstaion, could be cool if set to high b
 -- visual recoil   aka visrec
 SWEP.VisualRecoil = 1 -- general multiplier for it
 
-SWEP.EFT_VisualRecoilUp_BURST_SEMI   = 1.5   -- up/down tilt when semi/bursts
+-- SWEP.EFT_VisualRecoilUp_BURST_SEMI   = 1.5   -- up/down tilt when semi/bursts
 SWEP.VisualRecoilUp                   = 1.5   --   when fullautoing
-SWEP.EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
+-- SWEP.EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
 SWEP.VisualRecoilSide                 = 0.04   --   when fullautoing
 SWEP.VisualRecoilRoll = 15 -- roll tilt, a visual thing
 
@@ -336,11 +336,6 @@ local rik_empty = {
     { t = 0.7, lhik = 1 },
     { t = 1, lhik = 1 },
 }
-
-SWEP.EnterBipodSound = false 
-SWEP.ExitBipodSound = false
-SWEP.BipodPos = Vector(-1.7, -3.5, 1)
-SWEP.BipodAng = Angle(0, 0, 0)
 
 SWEP.Animations = {
     ["idle"] = { Source = "idle"  },
