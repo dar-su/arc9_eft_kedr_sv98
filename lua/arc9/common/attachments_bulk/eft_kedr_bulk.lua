@@ -82,6 +82,8 @@ ATT.CustomizeRotateAnchor = Vector(17.5, -4.28, -5.23)
 ATT.Category = {"eft_kedr_stock"}
 ATT.ExcludeElements = {"eft_mount_kedr_ris"}
 
+ATT.HasStock = false 
+
 ARC9.LoadAttachment(ATT, "eft_kedr_stockk")
 
 
