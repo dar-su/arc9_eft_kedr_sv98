@@ -174,7 +174,7 @@ ATT.Attachments = {
     },
     {
         PrintName = "Mount Bottom",
-        Category = "eft_mount_keymod",
+        Category = {"eft_mount_keymod", "eft_mount_keymod_bipod"},
         Pos = Vector(-2, 0, 1.0),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
