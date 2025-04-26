@@ -73,6 +73,8 @@ SWEP.Firemodes = {
 }
 
 SWEP.Slot = 2
+SWEP.ChamberSize = 0 -- no mag
+SWEP.ClipSize = 0 -- no single reloads
 
 -- this thing can one hand sprint
 local handupang, handuppos, handupholdtype = Angle(-2, 40, -7), Vector(0, -4, -10), "normal"
