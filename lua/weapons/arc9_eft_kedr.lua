@@ -5,28 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_kedr", "PP-91 \"Kedr\"", "en")
-ARC9:AddPhrase("eft_weapon_kedr", "ПП-91 \"Кедр\"", "ru")
-ARC9:AddPhrase("eft_weapon_kedr", "PP-91 \"Kedw\"", "uwu")
-ARC9:AddPhrase("eft_weapon_kedrb", "PP-91-01 \"Kedr-B\"", "en")
-ARC9:AddPhrase("eft_weapon_kedrb", "ПП-91-01 \"Кедр-Б\"", "ru")
-ARC9:AddPhrase("eft_weapon_kedrb", "PP-91-01 \"Kedw-Bwa\"", "uwu")
-ARC9:AddPhrase("eft_weapon_klin", "PP-9 \"Klin\"", "en")
-ARC9:AddPhrase("eft_weapon_klin", "ПП-9 \"Клин\"", "ru")
-ARC9:AddPhrase("eft_weapon_klin", "PP-9 \"Kwin\"", "uwu")
-
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_kedr")
-SWEP.Description = [[The PP-91 Kedr is a submachine gun chambered in 9x18 PM, designed by Yevgeny Dragunov in the early 90s by order of the Ministry of Internal Affairs and produced at ZMZ (Zlatoústovskiy Mashinostroítelnyy Zavód - "Zlatoust Machine-Building Plant"). This submachine gun has a simple but effective design. Its light weight makes it more comfortable to carry without affecting its performance, and it provides a high rate of fire without affecting its recoil. Thanks to these characteristics, its still used as a service weapon in almost all Russian law enforcement agencies.]]
+SWEP.Description = "eft_weapon_kedr_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_smg")
+SWEP.Class = "eft_class_weapon_smg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_smg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "ZMZ",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "9x18mm Makarov",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"] = ARC9:GetPhrase("eft_trivia_act_recoil"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1951"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_zmz",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_9x18",
+    ["eft_trivia_act3"] = "eft_trivia_act_recoil",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1951"
 }
 
 SWEP.StandardPresets = {
@@ -193,25 +183,15 @@ SWEP.ShellSounds = ARC9EFT.Shells9mm
 SWEP.HookP_NameChange = function(self, name)
     local elements = self:GetElements()
 
-    if elements["eft_kedr_conv_klin"] then
-        return ARC9:GetPhrase("eft_weapon_klin")
-    elseif elements["eft_kedr_conv_b"] then
-        return ARC9:GetPhrase("eft_weapon_kedrb")
-    else
-        return ARC9:GetPhrase("eft_weapon_kedr")
-    end
+    if elements["eft_kedr_conv_klin"] then return ARC9:GetPhrase("eft_weapon_klin")
+    elseif elements["eft_kedr_conv_b"] then return ARC9:GetPhrase("eft_weapon_kedrb") end
 end
 
 SWEP.HookP_DescriptionChange = function(self, desc)
     local elements = self:GetElements()
 
-    if elements["eft_kedr_conv_klin"] then
-        return [[The PP-9 Klin is a further evolution of the Kedr submachine gun. It has a higher rate of fire and its chamber is designed to use the 9x18 PMM cartridge. It was produced from 1996 to 2002 by order of the Ministry of Internal Affairs.]]
-    elseif elements["eft_kedr_conv_b"] then
-        return [[A rare silenced version of the PP-91 Kedr submachine gun, denominated as PP-91-01 Kedr-B.]]
-    else
-        return [[The PP-91 Kedr is a submachine gun chambered in 9x18 PM, designed by Yevgeny Dragunov in the early 90s by order of the Ministry of Internal Affairs and produced at ZMZ (Zlatoústovskiy Mashinostroítelnyy Zavód - "Zlatoust Machine-Building Plant"). This submachine gun has a simple but effective design. Its light weight makes it more comfortable to carry without affecting its performance, and it provides a high rate of fire without affecting its recoil. Thanks to these characteristics, its still used as a service weapon in almost all Russian law enforcement agencies.]]
-    end
+    if elements["eft_kedr_conv_klin"] then return "eft_weapon_klin_desc"
+    elseif elements["eft_kedr_conv_b"] then return "eft_weapon_kedrb_desc" end
 end
 
 ------------------------- |||           Sounds            ||| -------------------------

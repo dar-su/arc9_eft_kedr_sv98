@@ -5,21 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_sv98", "SV-98", "en")
-ARC9:AddPhrase("eft_weapon_sv98", "СВ-98", "ru")
-ARC9:AddPhrase("eft_weapon_sv98", "SW-98 :3", "uwu")
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_sv98")
-SWEP.Description = [[The SV-98 is a Russian sniper rifle developed in 1998-2000 by a group of weapon engineers led by V. Stronskiy and serially produced by IzhMash group. It is a magazine-fed bolt-action rifle, designed to engage the military personnel at the distances of up to 1000m.]]
+SWEP.Description = "eft_weapon_sv98_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_boltsnip")
+SWEP.Class = "eft_class_weapon_boltsnip"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_snip")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "IzhMash",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "7.62x54mmR",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"] = ARC9:GetPhrase("eft_trivia_act_bolt"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ru"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1998"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_izhmash",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_762x54",
+    ["eft_trivia_act3"] = "eft_trivia_act_bolt",
+    ["eft_trivia_country4"] = "eft_trivia_country_ru",
+    ["eft_trivia_year5"] = "1998"
 }
 
 SWEP.StandardPresets = {
